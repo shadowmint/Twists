@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+  <!-- Common for all components. -->
+  <context-param>
+    <description>The guice module for service component dependencies.</description>
+    <param-name>ServiceGuiceModule</param-name>
+    <param-value>...</param-value>
+  </context-param>
+  
+  <!-- Servlet for the DomainProxy component. -->
+  <servlet>
+    <servlet-name>DomainProxyComponent</servlet-name>
+    <!-- This class should extend twists.server.components.domainproxy.DomainProxyServiceImpl. -->
+    <servlet-class>my.class.Class</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DomainProxyComponent</servlet-name>
+    <url-pattern>[ROOT]/rpc/components/DomainProxy</url-pattern>
+  </servlet-mapping>
+</web-app>
